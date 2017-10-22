@@ -1,0 +1,37 @@
+<div class="output">
+  <h1 *ngIf="frequentWords.error">{{frequentWords.error}}</h1>
+  <div *ngIf="!frequentWords.error && frequentWords.output">
+
+    <div class="example-container mat-elevation-z8 info">
+      <mat-card>
+        <ng-container *ngIf="frequentWords.output.totalWords">
+          <span>
+            Total Words : {{frequentWords.output.totalWords}}
+          </span>
+          <br>
+        </ng-container>
+        <span *ngIf="frequentWords.output.totalUniqueWords">
+          Total Unique Words : {{frequentWords.output.totalUniqueWords}}
+        </span>
+      </mat-card>
+    </div>
+    <div class="example-container mat-elevation-z8">
+      <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="word">
+          <mat-header-cell *matHeaderCellDef> Words </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.word}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="frequency">
+          <mat-header-cell *matHeaderCellDef> Frequency </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.frequency}} </mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>

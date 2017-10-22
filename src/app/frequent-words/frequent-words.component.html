@@ -1,0 +1,12 @@
+<div class="content">
+  <h1>Get Most Frequent words</h1>
+
+  <div id="container">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter the input N" [(ngModel)]="n" type="number" value="5">
+    </mat-form-field>
+    <button mat-raised-button (click)="getOutput()">Get the output</button>
+    <button mat-raised-button (click)="getOutput('faster')">Get the output faster with redis</button>
+  </div>
+  <app-frequent-words-output *ngIf="frequentWords" [frequentWords]="frequentWords"></app-frequent-words-output>
+</div>
