@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// const HOST: any = 'http://52.89.8.131:3000/';
-const HOST: any = 'http://localhost:3000/';
+const HOST: any = 'http://52.89.8.131:3000/';
+// const HOST: any = 'http://localhost:3000/';
 
 @Component({
   selector: 'app-frequent-words',
