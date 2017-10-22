@@ -16,7 +16,7 @@ export class FrequentWordsComponent {
   
   constructor(private http: HttpClient) { }
 
-  getOutput(mode: string): void {
+  getOutput(mode?: string): void {
     let url = `${this.url}?input=${this.n || ''}`;
     if (mode === 'faster')
       url += `&useRedis=true`;
